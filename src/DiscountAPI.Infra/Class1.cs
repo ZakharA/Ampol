@@ -1,4 +1,4 @@
-﻿namespace DiscountsAPI.Infa;
+﻿namespace DiscountAPI.Infa;
 
 public class Class1
 {

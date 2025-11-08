@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
-    <ProjectReference Include="..\DiscountAPI.Core\DiscountsAPI.Core.csproj" />
+    <ProjectReference Include="..\DiscountAPI.Core\DiscountAPI.Core.csproj" />
   </ItemGroup>
 
   <ItemGroup>

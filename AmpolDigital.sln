@@ -7,15 +7,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{827E0CD3-B72
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DiscountAPI", "DiscountAPI", "{951F6BF6-02E1-0859-EB3B-B9DB912B064D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiscountsAPI", "src\DiscountAPI\DiscountsAPI.csproj", "{720B9202-692D-496D-B87F-AA96D575DA29}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiscountAPI", "src\DiscountAPI\DiscountAPI.csproj", "{720B9202-692D-496D-B87F-AA96D575DA29}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DiscountAPI.Core", "DiscountAPI.Core", "{2DA36C91-FF87-DF7B-5CA2-AED083F8CF51}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiscountsAPI.Core", "src\DiscountAPI.Core\DiscountsAPI.Core.csproj", "{2CF94702-9750-495A-A04C-338BA71343A1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiscountAPI.Core", "src\DiscountAPI.Core\DiscountAPI.Core.csproj", "{2CF94702-9750-495A-A04C-338BA71343A1}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DiscountAPI.Infra", "DiscountAPI.Infra", "{2D0D8589-EB77-9298-2CFD-9127289B03E1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiscountsAPI.Infa", "src\DiscountAPI.Infra\DiscountsAPI.Infa.csproj", "{582ED5C9-B084-42EC-9D01-C031071750E3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiscountAPI.Infa", "src\DiscountAPI.Infra\DiscountAPI.Infa.csproj", "{582ED5C9-B084-42EC-9D01-C031071750E3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoyaltyAPI", "src\LoyaltyAPI\LoyaltyAPI.csproj", "{8D6BCDAF-2CCE-4604-B632-AEF054D869C7}"
 EndProject

@@ -12,8 +12,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\DiscountAPI.Core\DiscountsAPI.Core.csproj" />
-    <ProjectReference Include="..\DiscountAPI.Infra\DiscountsAPI.Infa.csproj" />
+    <ProjectReference Include="..\DiscountAPI.Core\DiscountAPI.Core.csproj" />
+    <ProjectReference Include="..\DiscountAPI.Infra\DiscountAPI.Infa.csproj" />
     <ProjectReference Include="..\Shared.Common\Shared.Common.csproj" />
   </ItemGroup>
 
