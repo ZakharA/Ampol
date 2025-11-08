@@ -1,6 +1,23 @@
-@TransactionAPI_HostAddress = http://localhost:5044
+@TransactionAPI_HostAddress = http://localhost:5004
 
-GET {{TransactionAPI_HostAddress}}/weatherforecast/
-Accept: application/json
+### Process Transaction
+POST {{TransactionAPI_HostAddress}}/api/v1.0/transaction/process
+Content-Type: application/json
 
-###
+{
+  "customerId": "CUST001",
+  "loyaltyCard": "LOYALTY001",
+  "transactionDate": "08-Nov-2025",
+  "basket": [
+    {
+      "productId": "PROD001",
+      "unitPrice": "10.00",
+      "quantity": "2"
+    },
+    {
+      "productId": "PROD002",
+      "unitPrice": "25.50",
+      "quantity": "1"
+    }
+  ]
+}

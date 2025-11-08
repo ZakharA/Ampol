@@ -1,6 +1,21 @@
 @DiscountAPI_HostAddress = http://localhost:5013
 
-GET {{DiscountAPI_HostAddress}}/weatherforecast/
-Accept: application/json
+### Calculate Discount
+POST {{DiscountAPI_HostAddress}}/api/v1.0/discount/calculate
+Content-Type: application/json
 
-###
+{
+  "transactionDate": "08-Nov-2025",
+  "basket": [
+    {
+      "productId": "PROD001",
+      "unitPrice": "10.00",
+      "quantity": "2"
+    },
+    {
+      "productId": "PROD002",
+      "unitPrice": "25.50",
+      "quantity": "1"
+    }
+  ]
+}

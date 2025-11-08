@@ -11,11 +11,11 @@ builder.Services.AddScoped<ITransactionService, TransactionService>();
 
 builder.Services.AddHttpClient<IDiscountService, DiscountService>(client =>
 {
-    client.BaseAddress = new Uri("https://localhost:7201");
+    client.BaseAddress = new Uri("http://localhost:5013");
 });
 builder.Services.AddHttpClient<ILoyaltyService, LoyaltyService>(client =>
 {
-    client.BaseAddress = new Uri("https://localhost:7201");
+    client.BaseAddress = new Uri("http://localhost:5153");
 });
 
 builder.Services.AddControllers();
@@ -26,7 +26,7 @@ builder.Services.AddOpenApi();
 builder.Services.AddApiVersioning(options =>
 {
     options.AssumeDefaultVersionWhenUnspecified = true;
-    options.DefaultApiVersion = new Asp.Versioning.ApiVersion(1, 0);
+    options.DefaultApiVersion = new ApiVersion(1, 0);
     options.ReportApiVersions = true;
 });
 
@@ -37,8 +37,6 @@ if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
 }
-
-app.UseHttpsRedirection();
 
 app.UseAuthorization();
 

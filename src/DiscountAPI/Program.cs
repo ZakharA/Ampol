@@ -1,7 +1,8 @@
-using Microsoft.AspNetCore.OpenApi;
+using Asp.Versioning;
 using DiscountAPI.Core.Interfaces;
 using DiscountAPI.Core.Services;
 using DiscountAPI.Infra.Repositories;
+using Asp.Versioning.Routing;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,7 +12,20 @@ builder.Services.AddScoped<IDiscountPromotionRepository, DiscountPromotionReposi
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
 
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+
+builder.Services.AddApiVersioning(options =>
+{
+    options.DefaultApiVersion = new ApiVersion(1, 0);
+    options.AssumeDefaultVersionWhenUnspecified = true;
+    options.ReportApiVersions = true;
+});
+
+builder.Services.Configure<RouteOptions>(options =>
+{
+    options.ConstraintMap.Add("apiVersion", typeof(ApiVersionRouteConstraint));
+});
+
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddOpenApi();
 
