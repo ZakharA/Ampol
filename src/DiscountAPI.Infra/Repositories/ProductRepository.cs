@@ -22,4 +22,9 @@ public class ProductRepository : IProductRepository
         var product = _products.FirstOrDefault(p => p.ProductId == productId);
         return Task.FromResult(product);
     }
+
+    public Task<IEnumerable<Product>> GetAllProductsAsync()
+    {
+        return Task.FromResult(_products.AsEnumerable());
+    }
 }

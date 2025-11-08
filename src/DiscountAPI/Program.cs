@@ -15,6 +15,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddScoped<IDiscountService, DiscountService>();
 builder.Services.AddScoped<IDiscountPromotionRepository, DiscountPromotionRepository>();
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
+builder.Services.AddMemoryCache();
 
 builder.Services.AddControllers().AddJsonOptions(options =>
 {
