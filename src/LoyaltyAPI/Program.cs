@@ -15,6 +15,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddScoped<ILoyaltyService, LoyaltyService>();
 builder.Services.AddScoped<IPointsPromotionRepository, PointsPromotionRepository>();
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
+builder.Services.AddMemoryCache();
 
 builder.Services.AddControllers().AddJsonOptions(options =>
 {
