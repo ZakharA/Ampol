@@ -8,6 +8,6 @@ public class PointsPromotion
     public string PromotionName { get; set; } = string.Empty;
     public DateTimeOffset StartDate { get; set; }
     public DateTimeOffset EndDate { get; set; }
-    public ProductCategory Category { get; set; } = ProductCategory.None;
+    public ProductCategory? Category { get; set; }
     public int PointsPerDollar { get; set; }
 }
