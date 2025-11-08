@@ -1,4 +1,4 @@
-# Ampol Digital Solution
+# Tech test 
 
 This solution contains three separate APIs:
 - **DiscountAPI**: Handles discount calculations.
