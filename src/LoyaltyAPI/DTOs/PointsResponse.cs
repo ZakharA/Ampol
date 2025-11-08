@@ -2,6 +2,6 @@ namespace LoyaltyAPI.DTOs;
 
 public class PointsResponse
 {
-    public string PointsEarned { get; set; } = string.Empty;
+    public int PointsEarned { get; set; }
     public string PromotionApplied { get; set; } = string.Empty;
 }

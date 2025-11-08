@@ -2,8 +2,8 @@ using Microsoft.AspNetCore.Mvc;
 using LoyaltyAPI.DTOs;
 using LoyaltyAPI.Core.Interfaces;
 using Shared.Common.Models;
-using System.Globalization;
 using Asp.Versioning;
+using LoyaltyAPI.Mapping;
 
 namespace LoyaltyAPI.Controllers;
 
@@ -34,30 +34,19 @@ public class LoyaltyController : ControllerBase
     {
         try
         {
-            // Parse transaction date
-            var transactionDate = DateTime.ParseExact(
-                request.TransactionDate,
-                "dd-MMM-yyyy",
-                CultureInfo.InvariantCulture);
-
             // Convert DTOs to domain models
-            var basket = request.Basket.Select(item => new BasketItem
-            {
-                ProductId = item.ProductId,
-                UnitPrice = item.UnitPrice,
-                Quantity = item.Quantity
-            }).ToList();
+            var basket = request.Basket.ToDomain();
 
             // Calculate points
             var result = await _loyaltyService.CalculatePointsAsync(
                 basket,
                 request.GrandTotal,
-                transactionDate);
+                request.TransactionDate);
 
             // Return response
             return Ok(new PointsResponse
             {
-                PointsEarned = result.PointsEarned.ToString()
+                PointsEarned = result.PointsEarned
             });
         }
         catch (Exception ex)

@@ -3,6 +3,11 @@ using LoyaltyAPI.Core.Interfaces;
 using LoyaltyAPI.Core.Services;
 using LoyaltyAPI.Infra.Repositories;
 using Asp.Versioning.Routing;
+using FluentValidation;
+using FluentValidation.AspNetCore;
+using LoyaltyAPI.DTOs;
+using LoyaltyAPI.Validators;
+using LoyaltyAPI.Converters;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,7 +16,12 @@ builder.Services.AddScoped<ILoyaltyService, LoyaltyService>();
 builder.Services.AddScoped<IPointsPromotionRepository, PointsPromotionRepository>();
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
 
-builder.Services.AddControllers();
+builder.Services.AddControllers().AddJsonOptions(options =>
+{
+    options.JsonSerializerOptions.Converters.Add(new DateTimeOffsetConverter());
+});
+builder.Services.AddFluentValidationAutoValidation();
+builder.Services.AddScoped<IValidator<PointsRequest>, PointsRequestValidator>();
 
 builder.Services.AddApiVersioning(options =>
 {
