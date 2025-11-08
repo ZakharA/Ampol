@@ -7,6 +7,7 @@ using FluentValidation;
 using FluentValidation.AspNetCore;
 using DiscountAPI.DTOs;
 using DiscountAPI.Validators;
+using DiscountAPI.Converters;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,7 +16,10 @@ builder.Services.AddScoped<IDiscountService, DiscountService>();
 builder.Services.AddScoped<IDiscountPromotionRepository, DiscountPromotionRepository>();
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
 
-builder.Services.AddControllers();
+builder.Services.AddControllers().AddJsonOptions(options =>
+{
+    options.JsonSerializerOptions.Converters.Add(new DateTimeOffsetConverter());
+});
 builder.Services.AddFluentValidationAutoValidation();
 builder.Services.AddScoped<IValidator<DiscountRequest>, DiscountRequestValidator>();
 
