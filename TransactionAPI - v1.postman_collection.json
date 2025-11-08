@@ -1,0 +1,131 @@
+{
+	"info": {
+		"_postman_id": "931afce9-7789-434c-b5ed-879516e07d1c",
+		"name": "TransactionAPI | v1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "1938957"
+	},
+	"item": [
+		{
+			"name": "api",
+			"item": [
+				{
+					"name": "v{version}",
+					"item": [
+						{
+							"name": "Transaction",
+							"item": [
+								{
+									"name": "process",
+									"item": [
+										{
+											"name": "/api/v{{version}}/Transaction/process",
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "text/plain"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"customerId\": \"string\",\n  \"loyaltyCard\": \"string\",\n  \"transactionDate\": \"string\",\n  \"basket\": [\n    {\n      \"productId\": \"string\",\n      \"unitPrice\": \"string\",\n      \"quantity\": \"string\"\n    },\n    {\n      \"productId\": \"string\",\n      \"unitPrice\": \"string\",\n      \"quantity\": \"string\"\n    }\n  ]\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/v{{version}}/Transaction/process"
+											},
+											"response": [
+												{
+													"name": "OK",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "text/plain"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"customerId\": \"string\",\n  \"loyaltyCard\": \"string\",\n  \"transactionDate\": \"string\",\n  \"basket\": [\n    {\n      \"productId\": \"string\",\n      \"unitPrice\": \"string\",\n      \"quantity\": \"string\"\n    },\n    {\n      \"productId\": \"string\",\n      \"unitPrice\": \"string\",\n      \"quantity\": \"string\"\n    }\n  ]\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/v{{version}}/Transaction/process"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"body": "{\n  \"customerId\": \"string\",\n  \"loyaltyCard\": \"string\",\n  \"transactionDate\": \"string\",\n  \"totalAmount\": \"string\",\n  \"discountApplied\": \"string\",\n  \"grandTotal\": \"string\",\n  \"pointsEarned\": \"string\"\n}"
+												}
+											]
+										}
+									]
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:5004/"
+		},
+		{
+			"key": "version",
+			"value": "string"
+		}
+	]
+}

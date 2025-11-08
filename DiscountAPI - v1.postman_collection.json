@@ -1,0 +1,131 @@
+{
+	"info": {
+		"_postman_id": "f3f9e472-0463-44da-97bf-cf6b1b5dfabf",
+		"name": "DiscountAPI | v1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "1938957"
+	},
+	"item": [
+		{
+			"name": "api",
+			"item": [
+				{
+					"name": "v{version}",
+					"item": [
+						{
+							"name": "Discount",
+							"item": [
+								{
+									"name": "calculate",
+									"item": [
+										{
+											"name": "/api/v{{version}}/Discount/calculate",
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "text/plain"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"basket\": [\n    {\n      \"productId\": \"string\",\n      \"unitPrice\": \"string\",\n      \"quantity\": \"string\"\n    },\n    {\n      \"productId\": \"string\",\n      \"unitPrice\": \"string\",\n      \"quantity\": \"string\"\n    }\n  ],\n  \"transactionDate\": \"string\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/v{{version}}/Discount/calculate"
+											},
+											"response": [
+												{
+													"name": "OK",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "text/plain"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"basket\": [\n    {\n      \"productId\": \"string\",\n      \"unitPrice\": \"string\",\n      \"quantity\": \"string\"\n    },\n    {\n      \"productId\": \"string\",\n      \"unitPrice\": \"string\",\n      \"quantity\": \"string\"\n    }\n  ],\n  \"transactionDate\": \"string\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/v{{version}}/Discount/calculate"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"body": "{\n  \"totalAmount\": \"string\",\n  \"discountApplied\": \"string\",\n  \"grandTotal\": \"string\"\n}"
+												}
+											]
+										}
+									]
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:5013/"
+		},
+		{
+			"key": "version",
+			"value": "string"
+		}
+	]
+}
