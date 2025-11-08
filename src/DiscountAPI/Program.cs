@@ -3,6 +3,10 @@ using DiscountAPI.Core.Interfaces;
 using DiscountAPI.Core.Services;
 using DiscountAPI.Infra.Repositories;
 using Asp.Versioning.Routing;
+using FluentValidation;
+using FluentValidation.AspNetCore;
+using DiscountAPI.DTOs;
+using DiscountAPI.Validators;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,6 +16,8 @@ builder.Services.AddScoped<IDiscountPromotionRepository, DiscountPromotionReposi
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
 
 builder.Services.AddControllers();
+builder.Services.AddFluentValidationAutoValidation();
+builder.Services.AddScoped<IValidator<DiscountRequest>, DiscountRequestValidator>();
 
 builder.Services.AddApiVersioning(options =>
 {

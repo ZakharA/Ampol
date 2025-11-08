@@ -2,7 +2,7 @@ namespace Shared.Common.DTOs;
 
 public class BasketItemDto
 {
-    public string ProductId { get; set; } = string.Empty;
-    public string UnitPrice { get; set; } = string.Empty;
-    public string Quantity { get; set; } = string.Empty;
+    public required string ProductId { get; set; }
+    public required decimal UnitPrice { get; set; }
+    public required int Quantity { get; set; }
 }
