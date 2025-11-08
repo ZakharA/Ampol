@@ -23,10 +23,12 @@ public class LoyaltyService : ILoyaltyService
         DateTimeOffset transactionDate)
     {
         var pointsEarned = 0;
+        var promotionApplied = string.Empty;
 
         var promotion = await _pointsPromotionRepository.GetPointsPromotionAsync(transactionDate);
         if (promotion != null)
         {
+            promotionApplied = promotion.PromotionName;
             if (promotion.Category.HasValue)
             {
                 var totalSpentOnCategory = 0m;
@@ -48,7 +50,8 @@ public class LoyaltyService : ILoyaltyService
 
         return new PointsCalculationResult
         {
-            PointsEarned = pointsEarned
+            PointsEarned = pointsEarned,
+            PromotionApplied = promotionApplied
         };
     }
 }

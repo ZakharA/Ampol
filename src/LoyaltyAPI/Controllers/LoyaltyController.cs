@@ -46,7 +46,8 @@ public class LoyaltyController : ControllerBase
             // Return response
             return Ok(new PointsResponse
             {
-                PointsEarned = result.PointsEarned
+                PointsEarned = result.PointsEarned,
+                PromotionApplied = result.PromotionApplied
             });
         }
         catch (Exception ex)

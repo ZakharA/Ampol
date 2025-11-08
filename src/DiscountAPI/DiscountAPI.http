@@ -9,13 +9,33 @@ Content-Type: application/json
   "basket": [
     {
       "productId": "PROD001",
-      "unitPrice": "10.00",
-      "quantity": "2"
+      "unitPrice": 10.00,
+      "quantity": 2
     },
     {
       "productId": "PROD002",
-      "unitPrice": "25.50",
-      "quantity": "1"
+      "unitPrice": 25.50,
+      "quantity": 1
+    }
+  ]
+}
+
+### Calculate Discount with Promotion
+POST {{DiscountAPI_HostAddress}}/api/v1.0/discount/calculate
+Content-Type: application/json
+
+{
+  "transactionDate": "01-Feb-2020",
+  "basket": [
+    {
+      "productId": "PRD01",
+      "unitPrice": 15.00,
+      "quantity": 1
+    },
+    {
+      "productId": "PRD02",
+      "unitPrice": 50.00,
+      "quantity": 1
     }
   ]
 }

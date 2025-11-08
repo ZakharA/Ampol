@@ -20,3 +20,24 @@ Content-Type: application/json
     }
   ]
 }
+
+### Calculate Points with Promotion
+POST {{LoyaltyAPI_HostAddress}}/api/v1.0/loyalty/calculate
+Content-Type: application/json
+
+{
+  "transactionDate": "10-Feb-2020",
+  "grandTotal": 62.00,
+  "basket": [
+    {
+      "productId": "PRD01",
+      "unitPrice": 1.2,
+      "quantity": 50
+    },
+    {
+      "productId": "PRD04",
+      "unitPrice": 2.3,
+      "quantity": 1
+    }
+  ]
+}
