@@ -15,7 +15,7 @@ public class LoyaltyService : ILoyaltyService
         _httpClient = httpClient;
     }
 
-    public async Task<PointsResponse?> CalculatePointsAsync(TransactionRequest request, string grandTotal)
+    public async Task<PointsResponse?> CalculatePointsAsync(TransactionRequest request, decimal grandTotal)
     {
         var pointsRequest = new
         {

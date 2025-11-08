@@ -10,7 +10,8 @@ namespace DiscountAPI.Validators
         {
             RuleFor(x => x.Basket).NotEmpty();
             RuleForEach(x => x.Basket).SetValidator(new BasketItemDtoValidator());
-            RuleFor(x => x.TransactionDate).NotEmpty().LessThanOrEqualTo(DateTimeOffset.UtcNow);
+            RuleFor(x => x.TransactionDate).NotEmpty().LessThanOrEqualTo(DateTimeOffset.UtcNow)
+                .WithMessage("Transaction date cannot be in the future.");
         }
     }
 

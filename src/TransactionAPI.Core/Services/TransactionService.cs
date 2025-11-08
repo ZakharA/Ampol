@@ -34,7 +34,7 @@ public class TransactionService : ITransactionService
         {
             CustomerId = request.CustomerId,
             LoyaltyCard = request.LoyaltyCard,
-            TransactionDate = request.TransactionDate,
+            TransactionDate = DateTimeOffset.Parse(request.TransactionDate),
             TotalAmount = discountResponse.TotalAmount,
             DiscountApplied = discountResponse.DiscountApplied,
             GrandTotal = discountResponse.GrandTotal,

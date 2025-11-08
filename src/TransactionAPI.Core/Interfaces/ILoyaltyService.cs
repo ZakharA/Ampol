@@ -5,5 +5,5 @@ namespace TransactionAPI.Core.Interfaces;
 
 public interface ILoyaltyService
 {
-    Task<PointsResponse?> CalculatePointsAsync(TransactionRequest request, string grandTotal);
+    Task<PointsResponse?> CalculatePointsAsync(TransactionRequest request, decimal grandTotal);
 }

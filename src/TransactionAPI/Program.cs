@@ -5,11 +5,17 @@ using TransactionAPI.Core.Services;
 using Polly;
 using Polly.Extensions.Http;
 using TransactionAPI.Infra.Services;
+using FluentValidation;
+using FluentValidation.AspNetCore;
+using TransactionAPI.Validators;
+using Shared.Common.DTOs;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddScoped<ITransactionService, TransactionService>();
+builder.Services.AddFluentValidationAutoValidation();
+builder.Services.AddScoped<IValidator<TransactionRequest>, TransactionRequestValidator>();
 
 builder.Services.AddHttpClient<IDiscountService, DiscountService>(client =>
 {

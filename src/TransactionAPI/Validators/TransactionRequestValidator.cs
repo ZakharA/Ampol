@@ -1,17 +1,16 @@
 using FluentValidation;
-using LoyaltyAPI.DTOs;
+using Shared.Common.DTOs;
 
-namespace LoyaltyAPI.Validators
+namespace TransactionAPI.Validators
 {
-    public class PointsRequestValidator : AbstractValidator<PointsRequest>
+    public class TransactionRequestValidator : AbstractValidator<TransactionRequest>
     {
-        public PointsRequestValidator()
+        public TransactionRequestValidator()
         {
+            RuleFor(x => x.CustomerId).NotEmpty();
+            RuleFor(x => x.TransactionDate).NotEmpty();
             RuleFor(x => x.Basket).NotEmpty();
             RuleForEach(x => x.Basket).SetValidator(new BasketItemDtoValidator());
-            RuleFor(x => x.GrandTotal).GreaterThan(0);
-            RuleFor(x => x.TransactionDate).NotEmpty().LessThanOrEqualTo(DateTimeOffset.UtcNow)
-                .WithMessage("Transaction date cannot be in the future.");
         }
     }
 
